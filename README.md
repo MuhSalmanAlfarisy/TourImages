@@ -1,26 +1,35 @@
 # 🖼️ Supabase Image Repository
 
-Repositori ini digunakan sebagai tempat penyimpanan (storage) berbagai **gambar atau aset visual** yang terhubung dengan **database Supabase** pada project utama.
+Repositori ini berfungsi sebagai **penyimpanan referensi gambar (image storage)** yang digunakan dalam project utama berbasis **Supabase**.  
+Semua gambar disimpan melalui **fitur *Issues* GitHub**, bukan di dalam folder repo, agar lebih ringan dan mudah diatur.
+
+---
 
 ## 📦 Tujuan
-Repository ini berfungsi untuk:
-- Menyimpan file gambar yang digunakan oleh aplikasi berbasis Supabase (misalnya untuk tampilan antarmuka, data destinasi, profil, dsb).
-- Menyediakan URL publik dari GitHub agar dapat diintegrasikan langsung ke Supabase Storage atau API.
-- Mempermudah dokumentasi dan versioning aset gambar agar tidak tercampur dengan source code utama.
+Repository ini dibuat untuk:
+- Menyimpan dan mengelola **URL publik gambar** yang dibutuhkan aplikasi Supabase (seperti gambar destinasi, profil, ikon, dan konten visual lain).  
+- Memanfaatkan **GitHub Issue Attachment** sebagai sumber URL permanen (CDN sederhana).  
+- Menjaga agar **kode utama** di repository utama tetap bersih dari file media.  
+- Mendukung dokumentasi visual dan integrasi otomatis dengan database Supabase.
+
+---
 
 ## 🧩 Struktur Isi
-Setiap direktori di repo ini mewakili kategori atau wilayah tertentu, misalnya:
-- `/banten` → Gambar destinasi wisata di Provinsi Banten  
-- `/jawatimur` → Gambar wisata di Jawa Timur  
-- `/sumut` → Gambar wisata di Sumatera Utara  
-- `/ntt` → Gambar wisata di Nusa Tenggara Timur  
+Setiap *issue* berisi sekumpulan gambar yang mewakili kategori atau wilayah tertentu, misalnya:
+- **Issue: Banten** → Gambar destinasi wisata di Provinsi Banten  
+- **Issue: Jawa Timur** → Gambar wisata di Jawa Timur  
+- **Issue: Sumatera Utara** → Gambar wisata di Sumatera Utara  
+- **Issue: Nusa Tenggara Timur** → Gambar wisata di NTT  
 - dan seterusnya.
 
+---
+
 ## 🔗 Cara Menggunakan
-1. Buka gambar yang ingin digunakan dari folder ini.  
-2. Klik kanan → “Copy image address” atau salin URL GitHub-nya.  
-3. Gunakan URL tersebut di dalam aplikasi atau database Supabase, misalnya:
+1. Buka tab **Issues** pada repository ini.  
+2. Pilih *issue* sesuai kategori (misalnya *Jawa Timur*).  
+3. Klik kanan pada gambar → **Copy image address**.  
+4. Gunakan URL tersebut di project Supabase kamu, misalnya:
 
    ```sql
    INSERT INTO destinations (name, image_url)
-   VALUES ('Danau Toba', 'https://github.com/username/repo-name/assets/.../gambar.jpg');
+   VALUES ('Danau Toba', 'https://github.com/user-attachments/assets/xxxxxx.../image.jpg');
